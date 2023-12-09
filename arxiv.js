@@ -60,6 +60,8 @@ function arxiv_search({all, author, title, abstrct, journal_ref}) {
 	baseUrl += "all:" + all;
     }
 
+    baseUrl += "&max_results=1000";
+    
     var deferred = $.Deferred();
     $.ajax({
         url: baseUrl,
@@ -81,7 +83,7 @@ function arxiv_search({all, author, title, abstrct, journal_ref}) {
 			    'link': id,
 			    'summary': summary,
 			    'date': pub_date,
-			    'authors': authors
+			    'authors': authors,
 			   });
 	    });
 	    
